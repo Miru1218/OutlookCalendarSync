@@ -1,4 +1,5 @@
 # FullCalendar 連接 Outlook
+## !!!測試時須先將 calendar.service.ts 的 private token = "Microsoft Graph API"; 修改成自己的 Access token!!!
 ## 簡介
 本項目旨在使用 FullCalendar 和 Microsoft Graph API 將日曆應用程序與 Outlook 整合，以便使用者可以查看、創建、編輯和刪除 Outlook 日曆事件。
 ## 環境設置
