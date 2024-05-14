@@ -1,0 +1,9 @@
+<!-- 點擊按鈕以獲取日曆事件 -->
+<button (click)="getCalendarEvents()">Get Events</button>
+
+<!-- 使用 FullCalendar 元件來顯示日曆 -->
+<full-calendar
+  [events]="calendarEvents"
+  [options]="calendarOptions"
+  (dateClick)="onHandleDateClick($event)"
+></full-calendar>

@@ -1,0 +1,51 @@
+<div style="background-color: lightblue">
+  <div *ngIf="!config.data.isEdit">
+    <p>Selected Date: {{ selectedDate | date : "yyyy-MM-ddTHH:mm:ss" }}</p>
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" [(ngModel)]="event.subject" /><br />
+    <label for="startTime">Start Time:</label>
+    <input
+      type="datetime-local"
+      id="startTime"
+      [(ngModel)]="event.startTime"
+    /><br />
+    <label for="endTime">End Time:</label>
+    <input
+      type="datetime-local"
+      id="endTime"
+      [(ngModel)]="event.endTime"
+    /><br />
+    <label for="description">Description:</label><br />
+    <textarea
+      id="description"
+      rows="4"
+      cols="50"
+      [(ngModel)]="event.description"
+    ></textarea
+    ><br />
+    <button (click)="onSaveEvent()">Save Event</button>
+  </div>
+
+  <div *ngIf="config.data.isEdit">
+    <form [formGroup]="formGroup">
+      <div>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" formControlName="subject" />
+      </div>
+      <div>
+        <label for="startTime">StartTime:</label>
+        <input type="datetime-local" id="startTime" formControlName="start" />
+      </div>
+      <div>
+        <label for="endTime">EndTime:</label>
+        <input type="datetime-local" id="endTime" formControlName="end" />
+      </div>
+      <div>
+        <label for="body">body:</label>
+        <input type="text" id="body" formControlName="body" />
+      </div>
+    </form>
+    <button (click)="onEditEvent()">Edit</button>
+    <button (click)="onDeleteEvent()">Delete</button>
+  </div>
+</div>
